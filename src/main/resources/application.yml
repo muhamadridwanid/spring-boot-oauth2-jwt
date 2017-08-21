@@ -1,21 +1,20 @@
 server:
-  port: 9999
+    port: 9999
+
 spring:
-  datasource:
-    url: jdbc:mysql://${db.host:localhost}:${db.port:3306}/${db.name:z_user}?useSSL=false
-    username: ${db.uid:root}
-    password: ${db.pwd:nemapassword}
-    driver-class-name: com.mysql.jdbc.Driver
-    tomcat:
-      test-while-idle: true
-      validation-query: SELECT 1
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dialect
-    hibernate:
-      naming:
-        strategy: org.hibernate.cfg.ImprovedNamingStrategy
-      ddl-auto: validate
+    datasource:
+        url: jdbc:mysql://localhost:3306/oauth2jwt?useSSL=false
+        username: root
+        password:
+        driver-class-name: com.mysql.jdbc.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                dialect: org.hibernate.dialect.MySQL5Dialect
 security:
-  sessions: never
+    sessions: never
