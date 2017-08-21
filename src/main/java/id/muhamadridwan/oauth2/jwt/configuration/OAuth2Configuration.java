@@ -129,6 +129,7 @@ public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter {
 		@Override
 		public void init(AuthenticationManagerBuilder auth) throws Exception {
 			auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+
 		}
 	}
 }
